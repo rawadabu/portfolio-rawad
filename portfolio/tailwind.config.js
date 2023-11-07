@@ -2,7 +2,13 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    fontFamily: { playpen: "Rajdhani, rajdhani" },
+    extend: {
+      colors: {
+        primary: "#202225",
+        secondary: "#5865f2",
+      },
+    },
   },
   plugins: [],
 };

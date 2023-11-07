@@ -4,7 +4,10 @@
 
 @layer components {
   .input {
-    @apply rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-500 focus:ring focus:ring-yellow-400 md:px-6 md:py-3;
+    @apply rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-500 focus:ring focus:ring-sky-500 md:px-6 md:py-3;
+  }
+  .icon {
+    @apply relative flex items-center justify-center h-16 w-16 mt-6 mb-4 mx-auto shadow-lg bg-gray-800 text-sky-500 hover:bg-sky-600 hover:text-white rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear;
   }
   .loader {
     width: 45px;
