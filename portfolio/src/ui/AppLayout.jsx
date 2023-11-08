@@ -5,7 +5,7 @@ function AppLayout() {
   //   const navigation = useNavigation();
   //  IDLE OR LOADING console.log(navigation);
   return (
-    <div className="grid h-screen grid-rows-[auto_1fr_auto]">
+    <div className="grid h-screen grid-rows-[auto_1fr_auto] bg-backGround text-textColor">
       {/* {true && <Loader />} */}
       <Header />
       <div className="overflow-scroll">

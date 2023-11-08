@@ -2,11 +2,16 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="flex items-center justify-between border-b-2 border-sky-100 bg-primary text-secondary px-4 py-3 uppercase sm:px-6 shadow-lg font-playpen">
+    <header className="sticky top-0 border-b-2 px-4 py-3 uppercase sm:px-6 shadow-lg font-playpen flex justify-between items-center bg-backGround text-textColor z-10">
       <Link to="/" className="tracking-widest">
         Rawad Abu-Saleh
       </Link>
-      <button>Contact</button>
+      <div className="flex justify-end gap-5">
+        <button>About</button>
+        <button>Skills</button>
+        <button>Projects</button>
+        <button>Contact</button>
+      </div>
     </header>
   );
 }
