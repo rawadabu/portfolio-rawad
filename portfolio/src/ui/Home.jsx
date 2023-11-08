@@ -2,7 +2,7 @@
 // import CreateUser from "../features/user/CreateUser";
 import About from "../features/about/About";
 import Contact from "../features/contact/Contact";
-import Project from "../features/projects/Project";
+// import Projects from "../features/projects/Projects";
 import Skills from "../features/skills/Skills";
 import Button from "./Button";
 import homeImage from "../assets/homeImage.svg";
@@ -24,7 +24,7 @@ function Home() {
             interactions, developing rich web applications and seamless web
             experiences.
           </h2>
-          <Button to="/menu" type="primary">
+          <Button to="/about" type="primary">
             About me
           </Button>
         </div>
@@ -35,7 +35,19 @@ function Home() {
       </div>
       <About />
       <Skills />
-      <Project />
+      {/* <Projects /> */}
+      <div className="text-center grid place-items-center space-y-6 p-40 sm:my-16 font-playpen">
+        <h1 className="text-3xl">Previous Projects</h1>
+        <p>
+          I have built various different projects to fit different aspects of
+          the client&apos;s business. If you want to see more examples of my
+          work than the ones showcased in this site, please contact me!
+        </p>
+
+        <Button to="/projects" type="primary">
+          Go to Projects
+        </Button>
+      </div>
       <Contact />
     </>
   );
