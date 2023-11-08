@@ -19,7 +19,7 @@ function Home() {
             Software and web developer.
             <br />
           </h1>
-          <h2 className="text-sky-500">
+          <h2>
             Resolving design problems, building smart user interfaces and useful
             interactions, developing rich web applications and seamless web
             experiences.

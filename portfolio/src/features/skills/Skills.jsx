@@ -30,7 +30,7 @@ function Skills() {
           Visit my{" "}
           <a
             href="https://www.linkedin.com/in/rawadabu/"
-            className="text-sky-600 visited:text-pink-600"
+            className="text-sky-600 visited:text-fuchsia-500"
           >
             Linkedin
           </a>{" "}
