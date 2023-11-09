@@ -38,7 +38,12 @@ function Skills() {
         </p>
       </p>
       <div className="flex gap-4">
-        <BiLogoReact size="40" className="icon" />
+        <div className="group flex flex-col items-center">
+          <BiLogoReact size="40" className="icon" />
+          <span className="tooltip hidden group-hover:block absolute mt-24 bg-gray-800 text-fuchsia-500 px-2 py-1 rounded-md text-xl">
+            React
+          </span>
+        </div>
         <BiLogoAngular size="40" className="icon" />
         <BiLogoJavascript size="40" className="icon" />
         <BiLogoVuejs size="40" className="icon" />

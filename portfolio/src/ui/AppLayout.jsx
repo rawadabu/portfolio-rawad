@@ -1,5 +1,5 @@
 import Header from "./Header";
-import { Outlet, useLocation, useNavigation } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import Loader from "./Loader";
 import purpleRomb from "../assets/purpleRomb.png";
 
@@ -7,7 +7,6 @@ function AppLayout() {
   const navigation = useNavigation();
   // console.log(navigation);
   const isLoading = navigation.state === "loading";
-  const location = useLocation();
 
   const positions = [
     { top: "10vh", left: "20vw", width: "90px", height: "90px" },
@@ -28,20 +27,19 @@ function AppLayout() {
           <Outlet />
         </main>
       </div>
-      {location.pathname === "/" &&
-        positions.map((position, index) => (
-          <div
-            key={index}
-            className="absolute bg-cover z-0"
-            style={{
-              backgroundImage: `url(${purpleRomb})`,
-              top: position.top,
-              left: position.left,
-              width: position.width,
-              height: position.height,
-            }}
-          />
-        ))}
+      {positions.map((position, index) => (
+        <div
+          key={index}
+          className="absolute bg-cover z-0"
+          style={{
+            backgroundImage: `url(${purpleRomb})`,
+            top: position.top,
+            left: position.left,
+            width: position.width,
+            height: position.height,
+          }}
+        />
+      ))}
     </div>
   );
 }

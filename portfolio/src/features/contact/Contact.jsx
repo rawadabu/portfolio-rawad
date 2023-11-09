@@ -1,22 +1,36 @@
 import { Form, useActionData, useNavigation } from "react-router-dom";
 import Button from "../../ui/Button";
-import homeImage from "../../assets/homeImage.svg";
+import homeImage from "../../assets/handShake.svg";
+import {
+  BiLogoLinkedinSquare,
+  BiLogoGithub,
+  BiLogoFacebookCircle,
+} from "react-icons/bi";
 
 function Contact() {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
   const formErrors = useActionData(); // We get this when is not submittion made, error or somethings
   return (
-    <div className="grid grid-cols-2 my-10 px-4 sm:py-32 lg:px-8 mx-auto text-center">
+    <div className="grid grid-cols-2 my-10 px-4 sm:py-32 lg:px-8 mx-auto text-center font-playpen">
       <div
-        className="bg-center bg-no-repeat w-full h-96"
+        className="flex flex-col items-center bg-center bg-no-repeat w-full h-96 relative bg-cover"
         style={{ backgroundImage: `url(${homeImage})` }}
-      ></div>
+      >
+        <div className="flex flex-col items-center text-white">
+          <h1 className="text-3xl mb-4">GET IN TOUCH</h1>
+          {/* <img
+            src={homeImage}
+            alt="Contact"
+            className="w-24 h-24 rounded-full mb-4"
+          /> */}
+        </div>
+      </div>
 
       <div className="flex-col space-y-8">
-        <h2 className="mb-8 text-3xl font-playpen">
+        <h1 className="mb-8 text-3xl">
           Have a question or want to work together?
-        </h2>
+        </h1>
         <Form>
           <div className="mb-5  flex flex-col gap-2 sm:flex-row sm:items-center">
             <label className="sm:basis-40 ">First Name</label>
@@ -66,6 +80,11 @@ function Contact() {
             <Button type="primary" disabled={isSubmitting}>
               {isSubmitting ? "Submitting ..." : "Contact now"}
             </Button>
+            <div className="flex gap-4">
+              <BiLogoGithub className="icon" />
+              <BiLogoLinkedinSquare className="icon" />
+              <BiLogoFacebookCircle className="icon" />
+            </div>
           </div>
         </Form>
       </div>
