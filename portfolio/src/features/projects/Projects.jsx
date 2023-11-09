@@ -1,18 +1,23 @@
 import { useLoaderData } from "react-router-dom";
 import { getRepos } from "../../services/apiRepos";
 import ProjectItem from "./ProjectItem";
+import LinkButton from "../../ui/LinkButton";
 
 function Projects() {
   // console.log("RENDERED");
   const repos = useLoaderData();
+
   // console.log("Projects component - repos:", repos);
 
   return (
-    <ul>
-      {repos.map((repo) => (
-        <ProjectItem repo={repo} key={repo.id} />
-      ))}
-    </ul>
+    <>
+      <li className="my-10 px-4 grid grid-cols-4 gap-6 ">
+        {repos.map((repo) => (
+          <ProjectItem repo={repo} key={repo.id} />
+        ))}
+      </li>
+      <LinkButton to="-1">&larr; Go back</LinkButton>
+    </>
   );
 }
 
