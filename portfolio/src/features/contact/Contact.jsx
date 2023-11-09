@@ -15,7 +15,7 @@ function Contact() {
 
       <div className="flex-col space-y-8">
         <h2 className="mb-8 text-3xl font-playpen">
-          Ready to contact? Lets go!
+          Have a question or want to work together?
         </h2>
         <Form>
           <div className="mb-5  flex flex-col gap-2 sm:flex-row sm:items-center">

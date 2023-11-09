@@ -22,10 +22,10 @@ function Skills() {
           Skills & Experience The main area of expertise is front-end
           development (client side of the web).
         </p>
-        HTML, CSS, JS, building small and medium web applications with Vue or
-        React, custom plugins, features, animations, and coding interactive
+        HTML, CSS, JS, building small and medium web applications with Angular
+        or React, custom plugins, features, animations, and coding interactive
         layouts. I have also full-stack developer experience with one of the
-        most popular open-source CMS on the web - WordPress.
+        most popular open-source Company - Red Hat.
         <p>
           Visit my{" "}
           <a
