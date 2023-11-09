@@ -14,9 +14,9 @@ function Projects() {
         <div className="text-center grid place-items-center space-y-6 p-40 sm:my-16 font-playpen">
           <h1 className="text-3xl">Previous Projects</h1>
           <p>
-            I have built various different projects to fit different aspects of
-            the client&apos;s business. If you want to see more examples of my
-            work than the ones showcased in this site, please contact me!
+            I have built various different projects during my studies.
+            <br /> If you want to see more examples of my work than the ones
+            showcased in this site, please contact me!
           </p>
 
           <Button to="/projects" type="primary">
@@ -26,7 +26,7 @@ function Projects() {
       )}
       {location.pathname === "/projects" && (
         <>
-          <ul className="my-10 px-4 grid grid-cols-4 gap-6">
+          <ul className="flex gap-8 font-playpen py-44 px-4 overflow-x-auto">
             {repos.map((repo) => (
               <ProjectItem repo={repo} key={repo.id} />
             ))}

@@ -13,7 +13,7 @@ import {
 
 function Skills() {
   return (
-    <div className="flex flex-col items-center my-10 px-4 gap-6 font-playpen">
+    <div className="flex flex-col items-center gap-6 font-playpen">
       <p className="text-center">
         <h1 className="text-3xl">
           A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST.
@@ -24,8 +24,9 @@ function Skills() {
         </p>
         HTML, CSS, JS, building small and medium web applications with Angular
         or React, custom plugins, features, animations, and coding interactive
-        layouts. I have also full-stack developer experience with one of the
-        most popular open-source Company - Red Hat.
+        layouts.
+        <br /> I have also full-stack developer experience with one of the most
+        popular open-source Company - Red Hat.
         <p>
           Visit my{" "}
           <a

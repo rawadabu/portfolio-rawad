@@ -14,7 +14,7 @@ function Contact() {
   return (
     <div className="grid grid-cols-2 my-10 px-4 sm:py-32 lg:px-8 mx-auto text-center font-playpen">
       <div
-        className="flex flex-col items-center bg-center bg-no-repeat w-full h-96 relative bg-cover"
+        className="flex flex-col items-center bg-center bg-no-repeat w-full h-full relative bg-cover"
         style={{ backgroundImage: `url(${homeImage})` }}
       >
         <div className="flex flex-col items-center text-white">
@@ -48,7 +48,7 @@ function Contact() {
             <label className="sm:basis-40 ">Phone number</label>
             <div className="grow">
               <input
-                className="input w-full "
+                className="input w-full"
                 type="tel"
                 name="phone"
                 placeholder="Enter your number"

@@ -6,10 +6,10 @@ function ProjectItem({ repo }) {
 
   return (
     <div
-      className="font-playpen  p-4 border border-gray-300 rounded-lg shadow-md sm:min-w-1/2 md:min-w-1/4 "
       key={id}
+      className="flex-shrink-0 p-8 border border-gray-300 rounded-lg shadow-md"
     >
-      <h2 className="text-xl mb-2">{name}</h2>
+      <h2 className="text-xl mb-2 font-bold">{name}</h2>
       <p className="text-gray-600">
         Language: {language === null ? "none" : language}
       </p>
@@ -19,8 +19,8 @@ function ProjectItem({ repo }) {
       <p className="text-gray-600">
         Visibility: {visibility === true ? "Private" : "Public"}
       </p>
-      <Button to={html_url} type="small">
-        Go to repo
+      <Button to={html_url} type="project">
+        Go to repo &gt;
       </Button>
     </div>
   );

@@ -13,9 +13,9 @@ function Home() {
     <>
       {/* Background Image */}
 
-      <div className="grid grid-cols-2 my-10 px-4 text-center sm:my-16 font-playpen p-40">
-        <div className="flex-col space-y-8">
-          <h1 className="mb-8 text-xl md:text-3xl uppercase">
+      <div className="grid grid-cols-2 my-10 px-4 text-center sm:my-16 font-playpen ">
+        <div className="flex-col space-y-8 p-44">
+          <h1 className="mb-8 text-xl md:text-3xl uppercase ">
             Software and web developer.
             <br />
           </h1>
@@ -29,7 +29,7 @@ function Home() {
           </Button>
         </div>
         <div
-          className="bg-center bg-no-repeat w-full h-96"
+          className="bg-center bg-no-repeat w-full h-[40rem]"
           style={{ backgroundImage: `url(${homeImage})` }}
         ></div>
       </div>

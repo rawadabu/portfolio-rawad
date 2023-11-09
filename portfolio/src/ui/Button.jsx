@@ -7,8 +7,7 @@ function Button({ children, disabled, to, type }) {
     primary: base + " px-4 py-3 md:px-6 md:py-4",
     small: base + " px-4 py-2 md:px-5 md:py-2.5 text-xs",
     project:
-      base +
-      " px-4 py-2 md:px-5 md:py-2.5 text-xs text-fuchsia-500 bg-stone-900 underline",
+      "inline-block text-sm rounded-full hover:font-bold font-playpen uppercase tracking-wide text-stone-100 transition-colors duration-300 focus:outline-none disabled:cursor-not-allowed px-4 py-2 md:px-5 md:py-2.5 text-fuchsia-500 underline",
     navbar:
       base +
       " px-4 py-2 md:px-5 md:py-2.5 text-s hover:bg-white hover:text-fuchsia-700 border-fuchsia-700 bg-black border-b-2",
