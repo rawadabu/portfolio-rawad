@@ -5,7 +5,7 @@ function About() {
   const location = useLocation();
 
   return (
-    <div className="p-4 sm:p-8 md:p-12 lg:p-16 font-playpen">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 sm:p-8 md:p-12 lg:p-16 font-playpen">
       <div className="text-center">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl">
           Hi, I&apos;m Rawad, Software and Web Developer
@@ -16,7 +16,8 @@ function About() {
           </a>
         </h2>
       </div>
-      <div className="mt-4 sm:mt-6 lg:mt-8 text-center">
+
+      <div className="text-center mt-4 sm:mt-6 lg:mt-8">
         <p className="text-base sm:text-lg lg:text-xl">
           Professionally connected with the web development industry.
         </p>

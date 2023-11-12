@@ -18,11 +18,11 @@ function Skills() {
   return (
     <div className="flex flex-col items-center gap-6 font-playpen p-4 sm:p-8">
       <div className="text-center">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">
-          A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST.
+        <h1 className="sm:text-2xl md:text-3xl">
+          A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST
         </h1>
         <p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold hover:underline">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
             Skills & Experience
           </h2>
           The main area of expertise is front-end development (client side of
