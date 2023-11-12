@@ -3,7 +3,10 @@ import Home from "./ui/Home";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
 import About from "./features/about/About";
-import Projects, { loader as reposLoader } from "./features/projects/Projects";
+import Projects, {
+  loader as reposLoader,
+  loadSections as sectionsLoader,
+} from "./features/projects/Projects";
 import Contact from "./features/contact/Contact";
 import Skills from "./features/skills/Skills";
 
@@ -15,6 +18,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: sectionsLoader,
+        errorElement: <Error />,
       },
       {
         path: "/about",

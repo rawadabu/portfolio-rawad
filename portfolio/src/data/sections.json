@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Smarticle",
+    "description": "An open-source platform that is meant to be used by everyone",
+    "builtWith": "Django, Data Migrations, Python, CSS, HTML, Unit Testing",
+    "image": "src/assets/smarticle.png",
+    "url": "https://github.com/rawadabu/Smarticle"
+  },
+  {
+    "name": "We Clean",
+    "description": "Residential and commercial cleaning solutions",
+    "builtWith": "Angular, Node, TypeScript, CSS, Custom Stripe Integration, Docker, Firebase (NoSQL Database, Cloud Functions, Cloud Storage).",
+    "image": "src/assets/weClean.png",
+    "url": "https://github.com/rawadabu/weClean"
+  },
+  {
+    "name": "Pizza Fast",
+    "description": "Online store for ordering fast pizza.",
+    "builtWith": "React, Redux, JavaScript, API Context, Redux Store",
+    "image": "src/assets/pizza.png",
+    "url": "https://github.com/rawadabu/pizza-fast/tree/main/fast-react-pizza"
+  }
+]

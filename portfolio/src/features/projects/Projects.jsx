@@ -1,26 +1,39 @@
 import { useLoaderData, useLocation } from "react-router-dom";
-import { getRepos } from "../../services/apiRepos";
+import { getRepos, getSections } from "../../services/apiRepos";
 import ProjectItem from "./ProjectItem";
 import LinkButton from "../../ui/LinkButton";
 import Button from "../../ui/Button";
+import TopProjects from "./topProjects";
+// import { useState } from "react";
 
 function Projects() {
   const repos = useLoaderData();
   const location = useLocation();
+  const sections = useLoaderData();
 
   return (
     <>
       {location.pathname === "/" && (
-        <div className="text-center grid place-items-center space-y-6 p-40 sm:my-16 font-playpen">
-          <h1 className="text-3xl">Previous Projects</h1>
-          <p>
-            I have built various different projects during my studies.
-            <br /> If you want to see more examples of my work than the ones
-            showcased in this site, please contact me!
-          </p>
+        <div className="grid place-items-center space-y-12 sm:my-16 font-playpen">
+          <div className="text-center">
+            <h1 className="text-3xl">Previous Projects</h1>
+            <p>
+              I have built various different projects during my studies.
+              <br /> If you want to see more examples of my work than the ones
+              showcased in this site, please contact me!
+            </p>
+          </div>
+
+          <div className="overflow-x-auto whitespace-nowrap">
+            {sections.map((section) => (
+              <div key={section.id} className="inline-block">
+                <TopProjects section={section} />
+              </div>
+            ))}
+          </div>
 
           <Button to="/projects" type="primary">
-            Go to Projects
+            Go to GitHub Projects
           </Button>
         </div>
       )}
@@ -41,6 +54,11 @@ function Projects() {
 export async function loader() {
   const repos = await getRepos();
   return repos;
+}
+
+export async function loadSections() {
+  const sections = await getSections();
+  return sections;
 }
 
 export default Projects;
