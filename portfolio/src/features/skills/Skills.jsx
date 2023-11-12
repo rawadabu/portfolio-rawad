@@ -15,12 +15,13 @@ function Skills() {
   return (
     <div className="flex flex-col items-center gap-6 font-playpen">
       <p className="text-center">
-        <h1 className="text-3xl">
+        <h1 className="text-xl">
           A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST.
         </h1>
         <p>
-          Skills & Experience The main area of expertise is front-end
-          development (client side of the web).
+          <h2 className="text-3xl hover:underline">Skills & Experience</h2>
+          The main area of expertise is front-end development (client side of
+          the web).
         </p>
         HTML, CSS, JS, building small and medium web applications with Angular
         or React, custom plugins, features, animations, and coding interactive
