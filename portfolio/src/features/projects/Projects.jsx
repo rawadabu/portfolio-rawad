@@ -1,59 +1,37 @@
-import { useLoaderData, useLocation } from "react-router-dom";
-import { getRepos, getSections } from "../../services/apiRepos";
-import ProjectItem from "./ProjectItem";
-import LinkButton from "../../ui/LinkButton";
+import { useLoaderData } from "react-router-dom";
+import { getSections } from "../../services/apiRepos";
 import Button from "../../ui/Button";
 import TopProjects from "./topProjects";
-// import { useState } from "react";
 
 function Projects() {
-  const repos = useLoaderData();
-  const location = useLocation();
   const sections = useLoaderData();
 
   return (
-    <>
-      {location.pathname === "/" && (
-        <div className="grid place-items-center space-y-12 sm:my-16 font-playpen">
-          <div className="text-center">
-            <h1 className="text-3xl">Previous Projects</h1>
-            <p>
-              I have built various different projects during my studies.
-              <br /> If you want to see more examples of my work than the ones
-              showcased in this site, please contact me!
-            </p>
-          </div>
+    <div className="grid place-items-center sm:my-16 font-playpen">
+      <div className="text-center">
+        <h1 className="text-3xl">Previous Projects</h1>
+        <p>
+          I have built various different projects during my studies.
+          <br /> If you want to see more examples of my work than the ones
+          showcased on this site, please contact me!
+        </p>
+      </div>
 
-          <div className="overflow-x-auto whitespace-nowrap">
-            {sections.map((section) => (
-              <div key={section.id} className="inline-block">
-                <TopProjects section={section} />
-              </div>
-            ))}
-          </div>
-
-          <Button to="/projects" type="primary">
-            Go to GitHub Projects
-          </Button>
+      <div className="overflow-x-auto">
+        <div className="whitespace-nowrap py-4">
+          {sections.map((section) => (
+            <div key={section.id} className="inline-block px-4 sm:px-8">
+              <TopProjects section={section} />
+            </div>
+          ))}
         </div>
-      )}
-      {location.pathname === "/projects" && (
-        <>
-          <ul className="flex gap-8 font-playpen py-44 px-4 overflow-x-auto">
-            {repos.map((repo) => (
-              <ProjectItem repo={repo} key={repo.id} />
-            ))}
-          </ul>
-          <LinkButton to="-1">&larr; Go back</LinkButton>
-        </>
-      )}
-    </>
-  );
-}
+      </div>
 
-export async function loader() {
-  const repos = await getRepos();
-  return repos;
+      <Button to="/projects-view" type="primary">
+        Go to GitHub Projects
+      </Button>
+    </div>
+  );
 }
 
 export async function loadSections() {

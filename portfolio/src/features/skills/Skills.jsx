@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import React from "react";
 import {
   BiLogoReact,
   BiLogoJavascript,
@@ -13,13 +16,15 @@ import {
 
 function Skills() {
   return (
-    <div className="flex flex-col items-center gap-6 font-playpen">
-      <p className="text-center">
-        <h1 className="text-xl">
+    <div className="flex flex-col items-center gap-6 font-playpen p-4 sm:p-8">
+      <div className="text-center">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">
           A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST.
         </h1>
         <p>
-          <h2 className="text-3xl hover:underline">Skills & Experience</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold hover:underline">
+            Skills & Experience
+          </h2>
           The main area of expertise is front-end development (client side of
           the web).
         </p>
@@ -32,30 +37,36 @@ function Skills() {
           Visit my{" "}
           <a
             href="https://www.linkedin.com/in/rawadabu/"
-            className="text-sky-600 visited:text-fuchsia-500"
+            className="text-sky-600 visited:text-fuchsia-500 hover:underline"
           >
             Linkedin
           </a>{" "}
           for more details.
         </p>
-      </p>
-      <div className="flex gap-4">
-        <div className="group flex flex-col items-center">
-          <BiLogoReact size="40" className="icon" />
-          <span className="tooltip hidden group-hover:block absolute mt-24 bg-gray-800 text-fuchsia-500 px-2 py-1 rounded-md text-xl">
-            React
-          </span>
-        </div>
-        <BiLogoAngular size="40" className="icon" />
-        <BiLogoJavascript size="40" className="icon" />
-        <BiLogoVuejs size="40" className="icon" />
-        <BiLogoCss3 size="40" className="icon" />
-        <BiLogoHtml5 size="40" className="icon" />
-        <BiLogoGithub size="40" className="icon" />
-        <BiLogoDjango size="40" className="icon" />
-        <BiLogoVisualStudio size="40" className="icon" />
-        <BiLogoTailwindCss size="40" className="icon" />
       </div>
+      <div className="flex flex-wrap justify-center items-center gap-4">
+        <SkillIcon title="React" Icon={BiLogoReact} />
+        <SkillIcon title="Angular" Icon={BiLogoAngular} />
+        <SkillIcon title="JavaScript" Icon={BiLogoJavascript} />
+        <SkillIcon title="Vue.js" Icon={BiLogoVuejs} />
+        <SkillIcon title="CSS3" Icon={BiLogoCss3} />
+        <SkillIcon title="HTML5" Icon={BiLogoHtml5} />
+        <SkillIcon title="GitHub" Icon={BiLogoGithub} />
+        <SkillIcon title="Django" Icon={BiLogoDjango} />
+        <SkillIcon title="Visual Studio" Icon={BiLogoVisualStudio} />
+        <SkillIcon title="Tailwind CSS" Icon={BiLogoTailwindCss} />
+      </div>
+    </div>
+  );
+}
+
+function SkillIcon({ title, Icon }) {
+  return (
+    <div className="group flex flex-col items-center relative">
+      <Icon size="40" className="icon" />
+      <span className="hidden group-hover:block absolute mt-8 sm:mt-12 bg-gray-800 text-fuchsia-500 px-2 py-1 rounded-md text-lg sm:text-xl">
+        {title}
+      </span>
     </div>
   );
 }

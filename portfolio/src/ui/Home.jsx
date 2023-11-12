@@ -1,5 +1,3 @@
-// import { useSelector } from "react-redux";
-// import CreateUser from "../features/user/CreateUser";
 import About from "../features/about/About";
 import Contact from "../features/contact/Contact";
 import Projects from "../features/projects/Projects";
@@ -8,28 +6,24 @@ import Button from "./Button";
 import homeImage from "../assets/homeImage.svg";
 
 function Home() {
-  //   const username = useSelector((state) => state.user.username); // READ DATA FROM THE REDUX STORE
   return (
     <>
-      {/* Background Image */}
-
-      <div className="grid grid-cols-2 my-10 px-4 text-center sm:my-16 font-playpen ">
-        <div className="flex-col space-y-8 p-44">
-          <h1 className="mb-8 text-xl md:text-3xl uppercase ">
-            Software and web developer.
-            <br />
+      <div className="grid grid-cols-1 sm:grid-cols-2 my-10 px-4 sm:my-16 font-playpen">
+        <div className="p-4 sm:p-8">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl uppercase mb-4 sm:mb-8">
+            Software and web developer
           </h1>
-          <h2>
-            Resolving design problems, building smart user interfaces and useful
-            interactions, developing rich web applications and seamless web
+          <p className="text-base sm:text-lg lg:text-xl">
+            Resolving design problems, building smart user interfaces,
+            developing rich web applications, and creating seamless web
             experiences.
-          </h2>
-          <Button to="/about" type="primary">
+          </p>
+          <Button to="/about" type="primary" className="mt-4 sm:mt-8">
             About me
           </Button>
         </div>
         <div
-          className="bg-center bg-no-repeat w-full h-[40rem]"
+          className="bg-center bg-no-repeat w-full h-[20rem] sm:h-[40rem]"
           style={{ backgroundImage: `url(${homeImage})` }}
         ></div>
       </div>

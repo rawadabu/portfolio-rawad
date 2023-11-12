@@ -16,9 +16,9 @@ function Header() {
         </Link>
       </div>
       <div className="flex justify-end gap-5">
-        <Button type="navbar">About</Button>
-        <Button type="navbar">Skills</Button>
-        <Button type="navbar">Projects</Button>
+        <Button type="navbar" to="projects-view">
+          Projects
+        </Button>
         <Button type="navbar">Contact</Button>
       </div>
     </header>

@@ -3,12 +3,11 @@ import Home from "./ui/Home";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
 import About from "./features/about/About";
-import Projects, {
-  loader as reposLoader,
-  loadSections as sectionsLoader,
-} from "./features/projects/Projects";
+import { loadSections as sectionsLoader } from "./features/projects/Projects";
 import Contact from "./features/contact/Contact";
-import Skills from "./features/skills/Skills";
+import ProjectsView, {
+  loader as reposLoader,
+} from "./features/projects/ProjectsView";
 
 const router = createBrowserRouter([
   {
@@ -26,12 +25,8 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/skills",
-        element: <Skills />,
-      },
-      {
-        path: "/projects",
-        element: <Projects />,
+        path: "/projects-view",
+        element: <ProjectsView />,
         loader: reposLoader,
         errorElement: <Error />,
       },
