@@ -13,7 +13,7 @@ function Homepage() {
           rich web applications, and creating seamless web experiences.
         </p>
         <Button to="/about" type="project" className="mt-4 sm:mt-8">
-          About me
+          About me &gt;
         </Button>
       </div>
       <div
