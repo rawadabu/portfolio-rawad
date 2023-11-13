@@ -2,6 +2,7 @@ import Header from "./Header";
 import { Outlet, useNavigation } from "react-router-dom";
 import Loader from "./Loader";
 import purpleRomb from "../assets/purpleRomb.png";
+import dotsBackground from "../assets/dotsBackground.png";
 
 function AppLayout() {
   const navigation = useNavigation();
@@ -26,6 +27,12 @@ function AppLayout() {
         <main>
           <Outlet />
         </main>
+        <div
+          className="absolute bg-cover z-0"
+          style={{
+            backgroundImage: `url(${dotsBackground})`,
+          }}
+        />
       </div>
       {positions.map((position, index) => (
         <div

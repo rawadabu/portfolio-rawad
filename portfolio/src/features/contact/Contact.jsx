@@ -32,49 +32,50 @@ function Contact() {
         </h1>
         <Form>
           <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-            <label className="sm:w-40">First Name</label>
-            <input
-              className="input w-full sm:w-auto"
-              type="text"
-              name="customer"
-              placeholder="Enter your name"
-              required
-            />
+            <label className="sm:w-40">Full Name</label>
+            <div className="grow w-full">
+              <input
+                className="input w-full sm:w-auto"
+                type="text"
+                name="customer"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
           </div>
 
           <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-            <label className="sm:w-40">Phone number</label>
+            <label className="sm:w-40">Email</label>
             <div className="grow w-full">
               <input
-                className="input w-full"
-                type="tel"
-                name="phone"
-                placeholder="Enter your number"
+                className="input w-full sm:w-auto"
+                type="text"
+                name="email"
+                placeholder="Enter your email"
                 required
               />
-              {formErrors?.phone && (
+              {formErrors?.email && (
                 <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
-                  {formErrors.phone}
+                  {formErrors.email}
                 </p>
               )}
             </div>
           </div>
 
           <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-            <label className="sm:w-40">Address</label>
+            <label className="sm:w-40">Description</label>
             <div className="grow w-full">
-              <input
-                type="text"
-                name="address"
+              <textarea
+                className="input w-full sm:w-auto h-24" // Adjust the height as needed
+                name="description"
+                placeholder="Enter your description"
                 required
-                placeholder="Enter your address"
-                className="input w-full"
               />
             </div>
           </div>
 
           <div>
-            <input type="hidden" name="cart" />
+            <input type="hidden" name="contact" />
             <Button type="primary" disabled={isSubmitting}>
               {isSubmitting ? "Submitting ..." : "Contact now"}
             </Button>

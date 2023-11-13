@@ -14,6 +14,22 @@
     animation: spin 4s linear infinite; /* Adjust the duration (1s in this example) */
   }
 
+  /* ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  :-webkit-scrollbar-thumb {
+    background-color: rgb(162 28 175);
+    border-radius: 4px;
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 6px;
+  } */
+
+  /* Initially hide all sections */
+
   .loader {
     width: 45px;
     aspect-ratio: 0.75;
