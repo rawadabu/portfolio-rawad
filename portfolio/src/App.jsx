@@ -1,3 +1,6 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./ui/Home";
 import AppLayout from "./ui/AppLayout";
@@ -8,6 +11,12 @@ import Contact from "./features/contact/Contact";
 import ProjectsView, {
   loader as reposLoader,
 } from "./features/projects/ProjectsView";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: { staleTime: 60 * 1000 },
+  },
+});
 
 const router = createBrowserRouter([
   {
@@ -39,7 +48,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 }
 
 export default App;
