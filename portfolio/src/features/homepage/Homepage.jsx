@@ -1,5 +1,4 @@
 import Button from "../../ui/Button";
-import homeImage from "../../assets/homeImage.svg";
 
 function Homepage() {
   return (
@@ -18,7 +17,9 @@ function Homepage() {
       </div>
       <div
         className="bg-center bg-no-repeat w-full h-[20rem] sm:h-[40rem]"
-        style={{ backgroundImage: `url(${homeImage})` }}
+        style={{
+          backgroundImage: `url('https://zukttyxavjmehdcxbaty.supabase.co/storage/v1/object/public/interested/homeImage.svg')`,
+        }}
       ></div>
     </div>
   );
