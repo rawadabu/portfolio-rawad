@@ -3,7 +3,7 @@
 import { useLoaderData } from "react-router-dom";
 import { getSections } from "../../services/apiRepos";
 import Button from "../../ui/Button";
-import TopProjects from "./TopProjects";
+import TopProjects from "./topProjects";
 
 function Projects() {
   const sections = useLoaderData();
