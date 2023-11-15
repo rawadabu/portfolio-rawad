@@ -22,7 +22,6 @@ export async function createContact(newContact) {
         throw new Error(`New contact could not be created: ${error.message}`);
       }
 
-      console.log(data);
       return data;
     } else if (existingContacts.length === 1) {
       // Email exists, update the existing contact

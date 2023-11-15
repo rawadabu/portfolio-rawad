@@ -1,8 +1,23 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import Button from "../../ui/Button";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function TopProjects({ section }) {
-  const { name, description, builtWith, image, url } = section;
+  const { name, description, builtWith, image, url, placeHolder } = section;
+
+  const MyImage = () => (
+    <LazyLoadImage
+      effect="blur"
+      src={image}
+      width={600}
+      height={400}
+      alt="Top Projects Background"
+      placeholderSrc={placeHolder}
+    />
+  );
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 whitespace-normal overflow-ellipsis">
       <div className="relative p-4">
@@ -18,11 +33,13 @@ function TopProjects({ section }) {
         </div>
       </div>
       <div className="w-full">
-        <img
+        {/* <LazyLoadImage
           src={image}
+          effect="blur"
           alt="Background Image"
           className="w-full max-w-full h-auto"
-        />
+        /> */}
+        <MyImage />
       </div>
     </div>
   );

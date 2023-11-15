@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Form, useNavigation } from "react-router-dom";
+import { Form, useLocation, useNavigation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Button from "../../ui/Button";
 import {
@@ -10,8 +10,10 @@ import {
 import { useMutation } from "@tanstack/react-query";
 import { createContact } from "../../services/apiContacts";
 import { useEffect, useState } from "react";
+import LinkButton from "../../ui/LinkButton";
 
 function Contact() {
+  const location = useLocation();
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
 
@@ -45,7 +47,7 @@ function Contact() {
       description: data.description,
     };
     await mutation.mutateAsync(newContact);
-    reset(); // Reset the form after successful submission
+    reset();
   };
 
   const [successVisible, setSuccessVisible] = useState(false);
@@ -54,12 +56,12 @@ function Contact() {
   useEffect(() => {
     if (mutation.isSuccess) {
       setSuccessVisible(true);
-      setTimeout(() => setSuccessVisible(false), 5000); // Adjust the delay (in milliseconds) as needed
+      setTimeout(() => setSuccessVisible(false), 5000);
     }
 
     if (mutation.isError) {
       setErrorVisible(true);
-      setTimeout(() => setErrorVisible(false), 5000); // Adjust the delay (in milliseconds) as needed
+      setTimeout(() => setErrorVisible(false), 5000);
     }
   }, [mutation.isSuccess, mutation.isError]);
 
@@ -71,9 +73,23 @@ function Contact() {
             GET IN TOUCH
           </h1>
           <div className="flex gap-4">
-            <BiLogoGithub className="icon" />
-            <BiLogoLinkedinSquare className="icon" />
-            <BiLogoGmail className="icon" />
+            <a
+              href="https://github.com/rawadabu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <BiLogoGithub className="icon " />
+            </a>
+            <a
+              href="https://linkedin.com/in/rawadabu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <BiLogoLinkedinSquare className="icon " />
+            </a>
+            <a href="mailto:rawadabusaleh0@gmail.com">
+              <BiLogoGmail className="icon" />
+            </a>
           </div>
         </div>
       </div>
@@ -133,7 +149,7 @@ function Contact() {
                   required: "This field is required",
                 })}
                 id="description"
-                className="input w-full sm:w-auto h-24"
+                className="input w-full sm:w-auto"
                 placeholder="Enter your description"
                 required
               />
@@ -160,6 +176,9 @@ function Contact() {
           </div>
         </Form>
       </div>
+      {location.pathname === "/contact" && (
+        <LinkButton to="-1">&larr; Go back</LinkButton>
+      )}
     </div>
   );
 }

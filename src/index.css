@@ -43,6 +43,22 @@
     animation: fadeInScale 0.5s ease-out;
   }
 
+  @keyframes fadeInRotate {
+    0% {
+      opacity: 0;
+      transform: rotate(-30deg) scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+  }
+
+  /* Apply the new animation to elements with the animate-fadeInRotate class */
+  .animate-fadeInRotate {
+    animation: fadeInRotate 0.5s ease-out;
+  }
+
   .loader {
     width: 45px;
     aspect-ratio: 0.75;

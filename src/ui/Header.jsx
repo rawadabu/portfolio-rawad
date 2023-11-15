@@ -18,7 +18,9 @@ function Header() {
         <Button type="navbar" to="projects-view">
           Projects
         </Button>
-        <Button type="navbar">Contact</Button>
+        <Button type="navbar" to="/contact">
+          Contact
+        </Button>
       </div>
     </header>
   );
