@@ -10,6 +10,10 @@
     @apply relative flex items-center justify-center h-16 w-16 mt-6 mb-4 mx-auto shadow-lg bg-gray-800 text-fuchsia-500 hover:bg-fuchsia-400 hover:text-white rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer;
   }
 
+  .description {
+    @apply h-32; /* Adjust the height as needed */
+  }
+
   .custom-spin {
     animation: spin 4s linear infinite;
   }

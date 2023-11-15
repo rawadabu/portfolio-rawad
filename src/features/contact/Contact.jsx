@@ -94,7 +94,7 @@ function Contact() {
         </div>
       </div>
 
-      <div className="flex-col space-y-8 p-4 sm:p-8">
+      <div className="flex-col space-y-8 p-4 sm:p-8 justify-center">
         <h1 className="mb-8 text-3xl sm:text-4xl lg:text-5xl">
           Have a question or want to work together?
         </h1>
@@ -124,7 +124,13 @@ function Contact() {
             </label>
             <div className="grow w-full">
               <input
-                {...register("email", { required: "This field is required" })}
+                {...register("email", {
+                  required: "This field is required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: "Invalid email address",
+                  },
+                })}
                 id="email"
                 className="input w-full sm:w-auto"
                 type="text"
@@ -132,7 +138,7 @@ function Contact() {
                 required
               />
               {errors?.email && (
-                <p className="mt-2 rounded-sm bg-red-100 p-2 text-xs text-red-700">
+                <p className="mt-2 rounded-sm p-2 text-md font-bold text-red-700">
                   {errors.email.message}
                 </p>
               )}
@@ -149,27 +155,25 @@ function Contact() {
                   required: "This field is required",
                 })}
                 id="description"
-                className="input w-full sm:w-auto"
+                className="input w-full sm:w-auto description"
                 placeholder="Enter your description"
                 required
               />
             </div>
           </div>
+          <input type="hidden" name="contact" />
+          <Button type="primary" disabled={isSubmitting}>
+            {isSubmitting ? "Submitting ..." : "Contact now"}
+          </Button>
 
-          <div>
-            <input type="hidden" name="contact" />
-            <Button type="primary" disabled={isSubmitting}>
-              {isSubmitting ? "Submitting ..." : "Contact now"}
-            </Button>
-          </div>
           <div className="mt-4">
             {successVisible && (
-              <p className="text-green-500 transition duration-500 ease-in-out">
-                Form submitted successfully! 🚀
+              <p className="transition duration-500 ease-in-out font-extrabold">
+                Form submitted successfully! ✅
               </p>
             )}
             {errorVisible && (
-              <p className="text-red-500 transition duration-500 ease-in-out">
+              <p className="transition duration-500 ease-in-out font-extrabold">
                 Error submitting form. Please try again. 🛑
               </p>
             )}
