@@ -67,11 +67,9 @@ function Contact() {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 my-10 px-4 sm:py-32 lg:px-8 mx-auto text-center font-playpen">
-      <div className="bg-center bg-no-repeat bg-cover w-full h-80 sm:h-full relative">
+      <div className="bg-center bg-no-repeat bg-cover w-full h-80 sm:h-full relative flex flex-col justify-center items-center">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl mb-4 ">GET IN TOUCH</h1>
         <div className="flex flex-col items-center text-white p-4 sm:p-8">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl mb-4 font-extrabold">
-            GET IN TOUCH
-          </h1>
           <div className="flex gap-4">
             <a
               href="https://github.com/rawadabu"
@@ -94,72 +92,57 @@ function Contact() {
         </div>
       </div>
 
-      <div className="flex-col space-y-8 p-4 sm:p-8 justify-center">
-        <h1 className="mb-8 text-3xl sm:text-4xl lg:text-5xl font-extrabold">
-          Have a question or want to work together?
-        </h1>
+      <div className=" sm:grid-cols-2 gap-8 p-4 sm:p-8">
         <Form onSubmit={handleSubmit(onSubmit)}>
           {/* Your form fields */}
-          <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <label htmlFor="fullName" className="sm:w-40 font-bold">
-              Full Name
-            </label>
-            <div className="flex-grow">
-              <input
-                {...register("fullName", {
-                  required: "This field is required",
-                })}
-                id="fullName"
-                className="input w-full sm:w-auto"
-                type="text"
-                placeholder="Enter your name"
-                required
-              />
-            </div>
+          <div className="mb-5 flex flex-col gap-4">
+            <label htmlFor="fullName">Full Name</label>
+            <input
+              {...register("fullName", {
+                required: "This field is required",
+              })}
+              id="fullName"
+              className="input w-full"
+              type="text"
+              placeholder="Enter your name"
+              required
+            />
           </div>
 
-          <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <label htmlFor="email" className="sm:w-40 font-bold">
-              Email
-            </label>
-            <div className="flex-grow">
-              <input
-                {...register("email", {
-                  required: "This field is required",
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                    message: "Invalid email address",
-                  },
-                })}
-                id="email"
-                className="input w-full sm:w-auto"
-                type="text"
-                placeholder="Enter your email"
-                required
-              />
-              {errors?.email && (
-                <p className="mt-2 rounded-sm p-2 text-lg font-bold text-red-700">
-                  {errors.email.message}
-                </p>
-              )}
-            </div>
+          <div className="mb-5 flex flex-col gap-4">
+            <label htmlFor="email">Email</label>
+            <input
+              {...register("email", {
+                required: "This field is required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                  message: "Invalid email address",
+                },
+              })}
+              id="email"
+              className="input w-full"
+              type="text"
+              placeholder="Enter your email"
+              required
+            />
+            {errors?.email && (
+              <p className="mt-2 rounded-sm p-2 text-lg font-bold text-red-700">
+                {errors.email.message}
+              </p>
+            )}
           </div>
 
-          <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <label htmlFor="description" className="sm:w-40 font-bold">
-              Description
-            </label>
-            <div className="flex-grow">
-              <textarea
-                {...register("description", {
-                  required: "This field is required",
-                })}
-                id="description"
-                className="input w-full sm:w-auto description"
-                placeholder="Enter your description"
-                required
-              />
-            </div>
+          <div className="mb-5 flex flex-col gap-4">
+            <label htmlFor="description">Description</label>
+            <textarea
+              {...register("description", {
+                required: "This field is required",
+              })}
+              id="description"
+              className="input w-full description"
+              placeholder="Enter your description"
+              required
+            />
           </div>
 
           <input type="hidden" name="contact" />
