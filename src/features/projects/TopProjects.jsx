@@ -11,8 +11,7 @@ function TopProjects({ section }) {
     <LazyLoadImage
       effect="blur"
       src={image}
-      width={600}
-      height={400}
+      style={{ maxWidth: "70%", height: "auto" }}
       alt="Top Projects Background"
       placeholderSrc={placeHolder}
     />
