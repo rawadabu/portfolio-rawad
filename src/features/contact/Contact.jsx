@@ -69,7 +69,7 @@ function Contact() {
     <div className="grid grid-cols-1 sm:grid-cols-2 my-10 px-4 sm:py-32 lg:px-8 mx-auto text-center font-playpen">
       <div className="bg-center bg-no-repeat bg-cover w-full h-80 sm:h-full relative">
         <div className="flex flex-col items-center text-white p-4 sm:p-8">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl mb-4 font-extrabold">
             GET IN TOUCH
           </h1>
           <div className="flex gap-4">
@@ -78,33 +78,33 @@ function Contact() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <BiLogoGithub className="icon " />
+              <BiLogoGithub className="icon text-4xl" />
             </a>
             <a
               href="https://linkedin.com/in/rawadabu"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <BiLogoLinkedinSquare className="icon " />
+              <BiLogoLinkedinSquare className="icon text-4xl" />
             </a>
             <a href="mailto:rawadabusaleh0@gmail.com">
-              <BiLogoGmail className="icon" />
+              <BiLogoGmail className="icon text-4xl" />
             </a>
           </div>
         </div>
       </div>
 
       <div className="flex-col space-y-8 p-4 sm:p-8 justify-center">
-        <h1 className="mb-8 text-3xl sm:text-4xl lg:text-5xl">
+        <h1 className="mb-8 text-3xl sm:text-4xl lg:text-5xl font-extrabold">
           Have a question or want to work together?
         </h1>
         <Form onSubmit={handleSubmit(onSubmit)}>
           {/* Your form fields */}
-          <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-            <label htmlFor="fullName" className="sm:w-40">
+          <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <label htmlFor="fullName" className="sm:w-40 font-bold">
               Full Name
             </label>
-            <div className="grow w-full">
+            <div className="flex-grow">
               <input
                 {...register("fullName", {
                   required: "This field is required",
@@ -118,11 +118,11 @@ function Contact() {
             </div>
           </div>
 
-          <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-            <label htmlFor="email" className="sm:w-40">
+          <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <label htmlFor="email" className="sm:w-40 font-bold">
               Email
             </label>
-            <div className="grow w-full">
+            <div className="flex-grow">
               <input
                 {...register("email", {
                   required: "This field is required",
@@ -138,18 +138,18 @@ function Contact() {
                 required
               />
               {errors?.email && (
-                <p className="mt-2 rounded-sm p-2 text-md font-bold text-red-700">
+                <p className="mt-2 rounded-sm p-2 text-lg font-bold text-red-700">
                   {errors.email.message}
                 </p>
               )}
             </div>
           </div>
 
-          <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-            <label htmlFor="description" className="sm:w-40">
+          <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <label htmlFor="description" className="sm:w-40 font-bold">
               Description
             </label>
-            <div className="grow w-full">
+            <div className="flex-grow">
               <textarea
                 {...register("description", {
                   required: "This field is required",
@@ -161,6 +161,7 @@ function Contact() {
               />
             </div>
           </div>
+
           <input type="hidden" name="contact" />
           <Button type="primary" disabled={isSubmitting}>
             {isSubmitting ? "Submitting ..." : "Contact now"}
@@ -181,7 +182,9 @@ function Contact() {
         </Form>
       </div>
       {location.pathname === "/contact" && (
-        <LinkButton to="-1">&larr; Go back</LinkButton>
+        <LinkButton to="-1" className="absolute bottom-4 left-4 text-xl">
+          &larr; Go back
+        </LinkButton>
       )}
     </div>
   );
