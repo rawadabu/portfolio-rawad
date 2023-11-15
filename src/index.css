@@ -7,31 +7,26 @@
     @apply rounded-md border border-fuchsia-500 px-4 py-2 text-lg transition-all duration-300 placeholder:text-black text-black focus:ring focus:ring-fuchsia-500 md:px-6 md:py-3;
   }
   .icon {
-    @apply relative flex items-center justify-center h-16 w-16 mt-6 mb-4 mx-auto shadow-lg bg-gray-800 text-fuchsia-500 hover:bg-fuchsia-400 hover:text-white rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear;
+    @apply relative flex items-center justify-center h-16 w-16 mt-6 mb-4 mx-auto shadow-lg bg-gray-800 text-fuchsia-500 hover:bg-fuchsia-400 hover:text-white rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer;
   }
 
   .custom-spin {
-    animation: spin 4s linear infinite; /* Adjust the duration (1s in this example) */
+    animation: spin 4s linear infinite;
   }
 
-  /* ::-webkit-scrollbar {
-    width: 4px;
+  .overflow-x-auto::-webkit-scrollbar {
+    width: 12px;
   }
 
-  :-webkit-scrollbar-thumb {
+  .overflow-x-auto::-webkit-scrollbar-thumb {
     background-color: rgb(162 28 175);
     border-radius: 4px;
-    width: 4px;
   }
 
-  ::-webkit-scrollbar-track {
+  .overflow-x-auto::-webkit-scrollbar-track {
     border-radius: 6px;
-  } */
+  }
 
-  /* Initially hide all sections */
-
-  /* Create a reusable fade-in animation */
-  /* Create a more stylish fade-in and scale-up animation */
   @keyframes fadeInScale {
     0% {
       opacity: 0;
@@ -45,7 +40,7 @@
 
   /* Apply the animation to elements with the animate-fadeIn class */
   .animate-fadeIn {
-    animation: fadeInScale 0.5s ease-out; /* Adjust the duration and timing function as needed */
+    animation: fadeInScale 0.5s ease-out;
   }
 
   .loader {

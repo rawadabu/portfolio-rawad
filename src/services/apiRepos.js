@@ -1,5 +1,6 @@
 const API_URL = "https://api.github.com/users/rawadabu";
-const SECTIONS_PATH = "src/data/sections.json";
+const SECTIONS_PATH =
+  "https://zukttyxavjmehdcxbaty.supabase.co/storage/v1/object/public/sections/sections.json";
 
 export async function getRepos() {
   const res = await fetch(`${API_URL}/repos`);

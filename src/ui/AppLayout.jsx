@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Header from "./Header";
 import { Outlet, useNavigation } from "react-router-dom";
 import Loader from "./Loader";
@@ -7,14 +8,32 @@ function AppLayout() {
   // console.log(navigation);
   const isLoading = navigation.state === "loading";
 
-  const positions = [
-    { top: "10vh", left: "20vw", width: "90px", height: "90px" },
-    { top: "30vh", left: "70vw", width: "150px", height: "100px" },
-    { top: "70vh", left: "0vw", width: "180px", height: "180px" },
-    { top: "70vh", left: "90vw", width: "100px", height: "100px" },
+  // const positions = [
+  //   { top: "10%", left: "20%", width: "10vw", height: "10vh" },
+  //   { top: "30%", left: "70%", width: "15vw", height: "10vh" },
+  //   { top: "70%", left: "0%", width: "18vw", height: "18vh" },
+  //   { top: "70%", left: "90%", width: "10vw", height: "10vh" },
+  // ];
 
-    // Add more positions as needed
-  ];
+  // const BackgroundShapes = () => {
+  //   return (
+  //     <div className="relative h-full overflow-hidden bg-backGround text-textColor">
+  //       {positions.map((position, index) => (
+  //         <div
+  //           key={index}
+  //           className="absolute bg-cover"
+  //           style={{
+  //             backgroundImage: `url('https://zukttyxavjmehdcxbaty.supabase.co/storage/v1/object/public/interested/purpleRomb.png')`,
+  //             top: position.top,
+  //             left: position.left,
+  //             width: position.width,
+  //             height: position.height,
+  //           }}
+  //         />
+  //       ))}
+  //     </div>
+  //   );
+  // };
 
   return (
     <div className="grid h-screen grid-rows-[auto_1fr_auto] bg-backGround text-textColor">
@@ -26,19 +45,7 @@ function AppLayout() {
           <Outlet />
         </main>
       </div>
-      {positions.map((position, index) => (
-        <div
-          key={index}
-          className="absolute bg-cover z-0"
-          style={{
-            backgroundImage: `url('https://zukttyxavjmehdcxbaty.supabase.co/storage/v1/object/public/interested/purpleRomb.png')`,
-            top: position.top,
-            left: position.left,
-            width: position.width,
-            height: position.height,
-          }}
-        />
-      ))}
+      {/* <BackgroundShapes /> */}
     </div>
   );
 }
