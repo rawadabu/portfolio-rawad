@@ -8,29 +8,37 @@ function About() {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 sm:p-8 md:p-12 lg:p-16 font-playpen">
       <div className="text-center">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl">
-          Hi, I&apos;m Rawad, Software and Web Developer
+          Hi ✋🏼, I&apos;m Rawad, a passionate Software and Full Stack Developer
         </h1>
         <h2>
-          <a className="underline decoration-pink-500">
+          {/* <a className="underline decoration-pink-500">
             Front-End Developer/ JavaScript Fan/ Github Contributor
+          </a> */}
+          <a className="underline decoration-pink-500 text-lg">
+            BS.c in Computer Science
+          </a>{" "}
+          /{" "}
+          <a className="underline decoration-sky-500 text-lg">
+            React Course Certificate
           </a>
         </h2>
       </div>
 
-      <div className="text-center mt-4 sm:mt-6 lg:mt-8">
-        <p className="text-base sm:text-lg lg:text-xl">
-          Professionally connected with the web development industry.
+      <div className=" mt-4 sm:mt-6 lg:mt-8">
+        <p className="text-base sm:text-lg lg:text-xl ">
+          Passionate about shaping the digital landscape through web
+          development.
         </p>
         <p className="mt-2 sm:mt-4 lg:mt-6 text-base sm:text-lg lg:text-xl">
-          <a className="underline decoration-sky-500">
-            Problem solver, well-organized person, loyal employee, with high
-            attention to detail. Fan of F1, outdoor activities, video games, and
-            coding, of course.
-          </a>
+          Enthusiastic problem solver and highly detail-oriented professional.
+          <br />
+          Outside of coding, you&apos;ll find me exploring the world of tech,
+          engaging in sports like cycling, and enjoying a good book.
         </p>
         <p className="mt-2 sm:mt-4 lg:mt-6 text-base sm:text-lg lg:text-xl">
-          Interested in the entire frontend spectrum and working on ambitious
-          projects with interesting people.
+          Excited to tackle challenges across both frontend and backend realms,
+          collaborating on innovative projects with diverse and talented
+          individuals.
         </p>
       </div>
       {location.pathname === "/about" && (

@@ -11,12 +11,11 @@ function Projects() {
   return (
     <div className="grid place-items-center">
       <div className="text-center">
-        <h1 className="text-3xl"></h1>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+        <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold">
           Previous Projects
         </h1>
 
-        <p>
+        <p className="text-xl">
           I have built various different projects during my studies.
           <br /> If you want to see more examples of my work than the ones
           showcased on this site, please contact me!
